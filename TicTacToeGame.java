@@ -41,6 +41,11 @@ static char[] board = new char[10];
 		char computerSymbol = (playerLetter == 'X') ? 'O' : 'X';
 		System.out.println("Player Letter is : " + playerLetter);
 		System.out.println("Computer Letter is : " + computerSymbol);
+		
+		System.out.println("\n"+"Showing the Tic Tak Toe Boarder to the player  "+"\n");
+		
+		// creating object for showing the board to the player
+			tictactoe.showBoard();
 
 	}
 
