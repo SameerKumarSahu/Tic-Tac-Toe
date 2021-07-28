@@ -3,6 +3,8 @@ package com.Bridgelabz;
 import java.util.Scanner;
 
 public class TicTacToeGame {
+	final static int HEAD = 0;
+	final static int TAIL = 1;
 	public static Scanner sc = new Scanner(System.in);
 	public static char playerChoice;
 	static char board[] = new char[10];
@@ -61,6 +63,7 @@ public class TicTacToeGame {
 		showBoard();
 
 	}
+
 	// Check position
 	public boolean checkIfPositionFree(int boardLocation) {
 		if (board[boardLocation] == ' ') {
@@ -71,13 +74,21 @@ public class TicTacToeGame {
 		}
 	}
 
-	public static void main(String[] args) {
-		System.out.println("Tic Tak Toe Boarder" + "\n");
+	public void checkWhoPlaysFirst() {
+		int toss = (int) (Math.random() * 10) % 2;
+		if (toss == HEAD) {
+			System.out.println("Player play first");
+		} else if (toss == TAIL) {
+			System.out.println("Computer play first");
+		}
 
-		// creating object 
+	}
+
+	public static void main(String[] args) {
+
+		// creating object
 		TicTacToeGame tictactoe = new TicTacToeGame();
-		tictactoe.showBoard();
-		tictactoe.playerMakeMove(playerChoice);
+		tictactoe.checkWhoPlaysFirst();
 
 	}
 
