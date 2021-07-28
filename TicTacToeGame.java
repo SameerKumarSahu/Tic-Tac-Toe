@@ -83,12 +83,25 @@ public class TicTacToeGame {
 		}
 
 	}
+	public boolean getWinner(char playerSymbol) {
+		if ((board[1] == playerSymbol && board[2] == playerSymbol && board[3] == playerSymbol)
+				|| (board[4] == playerSymbol && board[5] == playerSymbol && board[6] == playerSymbol)
+				|| (board[7] == playerSymbol && board[8] == playerSymbol && board[9] == playerSymbol)
+				|| (board[1] == playerSymbol && board[5] == playerSymbol && board[9] == playerSymbol)
+				|| (board[3] == playerSymbol && board[5] == playerSymbol && board[7] == playerSymbol)
+				|| (board[1] == playerSymbol && board[4] == playerSymbol && board[7] == playerSymbol)
+				|| (board[2] == playerSymbol && board[5] == playerSymbol && board[8] == playerSymbol)
+				|| (board[3] == playerSymbol && board[6] == playerSymbol && board[9] == playerSymbol)) {
+			return true;
+		}
+		return false;
+	}
 
 	public static void main(String[] args) {
 
 		// creating object
 		TicTacToeGame tictactoe = new TicTacToeGame();
-		tictactoe.checkWhoPlaysFirst();
+		boolean winner = tictactoe.getWinner(playerChoice);
 
 	}
 
